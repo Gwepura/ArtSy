@@ -1,5 +1,5 @@
 from django import forms
-from .models import Email
+from .models import *
 
 class EmailForm(forms.ModelForm):
     class Meta:
@@ -17,4 +17,26 @@ class EmailForm(forms.ModelForm):
             'name': forms.TextInput(attrs={'class': 'form-control'}),
             'subject': forms.TextInput(attrs={'class': 'form-control'}),
             'message': forms.Textarea(attrs={'class': 'form-control'}),
+        }
+
+class QuestionForm(forms.Form):
+    class Meta:
+        model = Question
+        fields = ['question_text']
+        labels = {
+            'question_text': 'Question',
+        }
+        widgets = {
+            'question_text': forms.TextInput(attrs={'class': 'form-control'}),
+        }
+
+class ResponseForm(forms.Form):
+    class Meta:
+        model = Response
+        fields = ['response']
+        labels = {
+            'response': 'Response',
+        }
+        widgets = {
+            'response': forms.TextInput(attrs={'class': 'form-control'}),
         }

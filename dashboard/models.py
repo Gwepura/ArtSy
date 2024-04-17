@@ -10,3 +10,18 @@ class Email(models.Model):
 
     def __str__(self):
         return f'Email: {self.email} - {self.subject}'
+    
+class Question(models.Model):
+    question_text = models.CharField(max_length=200, blank=False, null=False, unique=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.question_text
+    
+class Response(models.Model):
+    question = models.ForeignKey(Question, on_delete=models.PROTECT)
+    response = models.CharField(max_length=200)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.response
