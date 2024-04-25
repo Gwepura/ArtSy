@@ -1,0 +1,792 @@
+{% load static %}
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Articulating Science">
+    <title>ArtSy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui" />
+    <link rel="shortcut icon" href="{% static '/images/logo.png' %}" type="image/x-icon">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'css/bootstrap-5.3.2.min.css' %}" />
+</head>
+
+<body id="main">
+    <!-- ############## MODALS ################ -->
+    <!-- Modal 1-->
+    <div class="modal focus" id="modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">How did you get here?</h5>
+                    <button type="button" id="close1" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-outline">
+                                <textarea class="form-control" id="how_response" rows="6"
+                                    placeholder="Response..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cancel1">Close</button>
+                    <button type="button" class="btn btn-primary" id="save1">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2-->
+    <div class="modal focus" id="modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Are you one of us?</h5>
+                    <button type="button" id="close2" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-outline">
+                                <textarea class="form-control" id="who_response" rows="6"
+                                    placeholder="Response..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cancel2">Close</button>
+                    <button type="button" class="btn btn-primary" id="save2">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3-->
+    <div class="modal focus" id="modal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">What do you do?</h5>
+                    <button type="button" id="close3" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-outline">
+                                <textarea class="form-control" id="what_response1" rows="6"
+                                    placeholder="Response..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cancel3">Close</button>
+                    <button type="button" class="btn btn-primary" id="save3">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 4-->
+    <div class="modal focus" id="modal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <form class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">How can we work together?</h5>
+                    <button type="button" id="close4" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-outline">
+                                <textarea class="form-control" id="what_response2" rows="6" placeholder="Response...">
+                                    </textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal4" id="cancel4">Close</button>
+                    <button type="submit" class="btn btn-primary" id="save4">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- ################################################################ -->
+
+
+
+    <section data-panel="first" id="home" class="d-flex flex-column justify-content-center">
+        <img src="{% static 'images/logo.png' %}" alt="logo" />
+        <div class="d-flex flex-column align-items-center justify-content-center">
+            <h2>Solution-focused communication practitioners</h2>
+            <h3>Creating change through dialogue</h3>
+        </div>
+
+        <div class="icons">
+            <img src="{% static 'images/icon1.png' %}" alt="icon" class="icon" />
+            <img src="{% static 'images/icon2.png' %}" alt="icon" class="icon" />
+            <img src="{% static 'images/icon3.png' %}" alt="icon" class="icon" />
+            <img src="{% static 'images/icon4.png' %}" alt="icon" class="icon" />
+            <img src="{% static 'images/icon5.png' %}" alt="icon" class="icon" />
+            <img src="{% static 'images/icon6.png' %}" alt="icon" class="icon" />
+            <img src="{% static 'images/icon7.png' %}" alt="icon" class="icon" />
+            <img src="{% static 'images/icon8.png' %}" alt="icon" class="icon" />
+            <img src="{% static 'images/icon9.png' %}" alt="icon" class="icon" />
+        </div>
+    </section>
+
+    <section data-panel="second" id="who" class="section who">
+        <h1 id="who_h">Who we are</h1>
+        <div class="desc slide-up" id="who_desc" data-delighter>
+            <p class="">
+                We are a group of people, from different fields and backgrounds, who care about the state of the
+                world and its
+                inhabitants. We recognize that there are likely billions of other people who do as well. We
+                acknowledge that mankind's
+                ability to improve the world is incredibly high, should a collective decision be made amongst
+                ourselves. We believe
+                there are enough people who want a better world, to make it a reality. We all have the power to
+                exact change, when we
+                work as a collective.
+            </p>
+            <p style="text-align: center;display: flex; flex-direction: column;">
+                <button class="typing" id="who_typed" type="button"></button>
+            </p>
+
+        </div>
+
+    </section>
+
+    <section data-panel="third" id="why" class="section why">
+        <h1 id="why_h">Why we're here</h1>
+        <div class="desc slide-up" id="why_desc" data-delighter>
+            <p class="">
+                Articulating Science (“ArtSy” for short) is here to develop a hotline to society used for harnessing
+                mass cooperation.
+                To build a reputation as a source of clear and trustworthy information that is communicated
+                throughout a myriad of
+                communities, rapidly. The desired outcome is to improve our collective mental, physical,
+                environmental and economic
+                health. As they are all interlinked.
+            </p>
+            <p style="text-align: center;display: flex; flex-direction: column;">
+                <button class="typing" id="why_typed"></button>
+            </p>
+
+        </div>
+    </section>
+
+    <section data-panel="fourth" id="what" class="section what">
+        <h1 id="what_h">What we do</h1>
+        <div class="desc slide-up" id="what_desc" data-delighter>
+            <p class="">
+                We use a combination of innovative and traditional communication methods to spread awareness about
+                the Sustainable
+                Development Goals (SDGs) and invite collective action. Our approach inspires and facilitates
+                collaboration among all the
+                minds who want to contribute to solutions. We initiate and foster partnership between organisations,
+                government, and the
+                public, in order to meet all 17 SDGs.
+            </p>
+            <!-- <button> -->
+            <p style="text-align: center;display: flex; flex-direction: column;">
+                <button class="typing" id="what_typed1" type="button"></button> <br />
+                <button class="typing" id="what_typed2" type="button"></button>
+            </p>
+
+            <!-- </button> -->
+        </div>
+    </section>
+
+    <section data-panel="fifth" id="goals" class="section">
+        <h1>Learn more about the goals</h1>
+
+        <div class="container w-100 d-flex flex-wrap justify-content-evenly goals-container" style="padding-top: 10vh;">
+            <div class="img-goal-div"><a href="https://sdgs.un.org/goals/goal1"><img src="{% static 'images/E-WEB' %}-Goal-01.png"
+                        alt="icon" class="mt-1" /></a></div>
+            <div class="img-goal-div"><a href="https://sdgs.un.org/goals/goal2"><img src="{% static 'images/E-WEB' %}-Goal-02.png"
+                        alt="icon" class="mt-1" /></a></div>
+            <div class="img-goal-div"><a href="https://sdgs.un.org/goals/goal3"><img src="{% static 'images/E-WEB' %}-Goal-03.png"
+                        alt="icon" class="mt-1" /></a></div>
+            <div class="img-goal-div"><a href="https://sdgs.un.org/goals/goal4"><img src="{% static 'images/E-WEB' %}-Goal-04.png"
+                        alt="icon" class="mt-1" /></a></div>
+            <div class="img-goal-div"><a href="https://sdgs.un.org/goals/goal5"><img src="{% static 'images/E-WEB' %}-Goal-05.png"
+                        alt="icon" class="mt-1" /></a></div>
+            <div class="img-goal-div"><a href="https://sdgs.un.org/goals/goal6"><img src="{% static 'images/E-WEB' %}-Goal-06.png"
+                        alt="icon" class="mt-1" /></a></div>
+            <div class="img-goal-div"><a href="https://sdgs.un.org/goals/goal7"><img src="{% static 'images/E-WEB' %}-Goal-07.png"
+                        alt="icon" class="mt-1" /></a></div>
+            <div class="img-goal-div"><a href="https://sdgs.un.org/goals/goal8"><img src="{% static 'images/E-WEB' %}-Goal-08.png"
+                        alt="icon" class="mt-1" /></a></div>
+            <div class="img-goal-div"><a href="https://sdgs.un.org/goals/goal9"><img src="{% static 'images/E-WEB' %}-Goal-09.png"
+                        alt="icon" class="mt-1" /></a></div>
+            <div class="img-goal-div"><a href="https://sdgs.un.org/goals/goal10"><img src="{% static 'images/E-WEB' %}-Goal-10.png"
+                        alt="icon" class="mt-1" /></a></div>
+            <div class="img-goal-div"><a href="https://sdgs.un.org/goals/goal11"><img src="{% static 'images/E-WEB' %}-Goal-11.png"
+                        alt="icon" class="mt-1" /></a></div>
+            <div class="img-goal-div"><a href="https://sdgs.un.org/goals/goal12"><img src="{% static 'images/E-WEB' %}-Goal-12.png"
+                        alt="icon" class="mt-1" /></a></div>
+            <div class="img-goal-div"><a href="https://sdgs.un.org/goals/goal13"><img src="{% static 'images/E-WEB' %}-Goal-13.png"
+                        alt="icon" class="mt-1" /></a></div>
+            <div class="img-goal-div"><a href="https://sdgs.un.org/goals/goal14"><img src="{% static 'images/E-WEB' %}-Goal-14.png"
+                        alt="icon" class="mt-1" /></a></div>
+            <div class="img-goal-div"><a href="https://sdgs.un.org/goals/goal15"><img src="{% static 'images/E-WEB' %}-Goal-15.png"
+                        alt="icon" class="mt-1" /></a></div>
+            <div class="img-goal-div"><a href="https://sdgs.un.org/goals/goal16"><img src="{% static 'images/E-WEB' %}-Goal-16.png"
+                        alt="icon" class="mt-1" /></a></div>
+            <div class="img-goal-div"><a href="https://sdgs.un.org/goals/goal17"><img src="{% static 'images/E-WEB' %}-Goal-17.png"
+                        alt="icon" class="mt-1" /></a></div>
+            <div class="img-goal-div"><a href="https://sdgs.un.org/goals"><img src="{% static 'images/goal18.png' %}" alt="icon"
+                        class="mt-1" style="height: -webkit-fill-available;" /></a>
+            </div>
+
+        </div>
+
+        <h3>You can watch our SDG explainer videos on our social media platforms</h3>
+
+        <div class="icons mt-lg-2 mt-sm-5">
+            <div class="icon">
+                <a href="https://www.facebook.com/profile.php?id=61557516818984" target="_blank">
+                    <img src="{% static 'images/Facebook_Logo_Primary.png' %}" alt="facebook" />
+                </a>
+            </div>
+
+            <div class="icon">
+                <a href="https://www.instagram.com/articulating_science">
+                    <img src="{% static 'images/Instagram_Glyph_Gradient.png' %}" alt="Instagram" />
+                </a>
+            </div>
+
+            <div class="icon">
+                <a href="https://www.linkedin.com/company/articulating-science/">
+                    <img src="{% static 'images/LI-In-Bug.png' %}" alt="linkedIn" />
+                </a>
+            </div>
+
+            <div class="icon">
+                <a href="https://www.tiktok.com/@art_sy01">
+                    <img src="{% static 'images/TikTok_Icon_Black_Square.png' %}" alt="tiktok" />
+                </a>
+            </div>
+
+            <div class="icon">
+                <a href="https://x.com/arty_sy">
+                    <img src="{% static 'images/logo-white.png' %}" alt="twitter" />
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <section data-panel="sixth" id="team" class="d-flex">
+        <h2>OUR TEAM</h2>
+
+    </section>
+
+    <section data-panel="seventh" id="contact" class="d-flex flex-column">
+        <h1>Contact Us</h1>
+        <h2 class="mt-2">We'd love to hear from you</h2>
+
+        <form action="" class="w-75 mx-auto my-4" id="contact-form">
+            <div class="row">
+                <div class="col-8 mx-auto">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="from_name" id="from_name" placeholder="Name"
+                            required />
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-8 mx-auto">
+                    <div class="form-group">
+                        <input type="email" class="form-control" name="from_email" id="from_email"
+                            placeholder="Email Address" required />
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-8 mx-auto">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject"
+                            required />
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-8 mx-auto">
+                    <div class="form-outline">
+                        <textarea class="form-control" rows="6" placeholder="Message" name="message" id="message"
+                            required></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row d-flex align-items-center justify-content-center my-2">
+                <div class="col-4 d-none">
+                    <div class="d-flex align-items-center justify-content-between w-100">
+                        <h2 id="mainCaptcha" class="text-info"></h2>
+                        <button id="refresh" onclick="Captcha();">Refresh</button>
+                    </div>
+                    <div>
+                        <input type="text" id="txtInput" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="col-4">
+                    <button type="submit" class="btn btn-primary w-100" id="contact-button">Send</button>
+                </div>
+
+            </div>
+        </form>
+
+        <h2 class="">Connect with us on our social media platforms</h2>
+        <div class="icons">
+            <div class="icon">
+                <a href="https://www.facebook.com/profile.php?id=61557516818984" target="_blank">
+                    <img src="{% static 'images/Facebook_Logo_Primary.png' %}" alt="facebook" />
+                </a>
+            </div>
+
+            <div class="icon">
+                <a href="https://www.instagram.com/articulating_science">
+                    <img src="{% static 'images/Instagram_Glyph_Gradient.png' %}" alt="Instagram" />
+                </a>
+            </div>
+
+            <div class="icon">
+                <a href="https://www.linkedin.com/company/articulating-science/">
+                    <img src="{% static 'images/LI-In-Bug.png' %}" alt="linkedIn" />
+                </a>
+            </div>
+
+            <div class="icon">
+                <a href="https://www.tiktok.com/@art_sy01">
+                    <img src="{% static 'images/TikTok_Icon_Black_Square.png' %}" alt="tiktok" />
+                </a>
+            </div>
+
+            <div class="icon">
+                <a href="https://x.com/arty_sy">
+                    <img src="{% static 'images/logo-white.png' %}" alt="twitter" />
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <ul class="menu mx-auto">
+        <li>
+            <button data-panel="first" class="menu-button">Home</button>
+        </li>
+        <li>
+            <button data-panel="second" class="menu-button">Who</button>
+        </li>
+        <li>
+            <button data-panel="third" class="menu-button">Why</button>
+        </li>
+        <li>
+            <button data-panel="fourth" class="menu-button">What</button>
+        </li>
+        <li>
+            <button data-panel="fifth" class="menu-button">The Goals</button>
+        </li>
+        <li>
+            <button data-panel="sixth" class="menu-button">Team</button>
+        </li>
+        <li>
+            <button data-panel="seventh" class="menu-button">Contact Us</button>
+        </li>
+    </ul>
+
+    <script src="{% static 'js/jquery-3.7.1.js' %}"></script>
+    <script src="{% static 'js/bootstrap-5.3.2.min.js' %}"></script>
+    <script src="{% static 'js/panelsnap.js' %}"></script>
+
+    <script src="{% static 'js/script.js' %}"></script>
+
+    <!-- emailjs -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <!-- firebase -->
+    <script type="module">
+
+        var responses = [];
+
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-analytics.js";
+        import {
+            getFirestore, collection, getDocs, addDoc
+        } from 'https://www.gstatic.com/firebasejs/10.10.0/firebase-firestore.js';
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyB8PN-9CvfILnzFJXCEmXcBgGMjajljd2A",
+            authDomain: "artsy-13e9b.firebaseapp.com",
+            projectId: "artsy-13e9b",
+            storageBucket: "artsy-13e9b.appspot.com",
+            messagingSenderId: "555519151455",
+            appId: "1:555519151455:web:94eb47099c79fac4963aea",
+            measurementId: "G-QNV992C2CN"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+
+        // firestore initialize
+        var db = getFirestore(app);
+
+        window.onload = () => {
+            var captchaValue = "";
+            // save responses
+            let saveButtons = [
+                {
+                    btn: document.getElementById("save1"),
+                    response: document.getElementById("how_response"),
+                    question: "How did you get here?",
+                    modal: document.getElementById("modal1")
+                },
+                {
+                    btn: document.getElementById("save2"),
+                    response: document.getElementById("who_response"),
+                    question: "Are you one of us?",
+                    modal: document.getElementById("modal2")
+                },
+                {
+                    btn: document.getElementById("save3"),
+                    response: document.getElementById("what_response1"),
+                    question: "What do you do?",
+                    modal: document.getElementById("modal3")
+                },
+                {
+                    btn: document.getElementById("save4"),
+                    response: document.getElementById("what_response2"),
+                    question: "How can we work together?",
+                    modal: document.getElementById("modal4")
+                },
+            ]
+
+            saveButtons.map((btn, i) => {
+                btn.btn.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    let data = {
+                        question: btn.question,
+                        response: btn.response.value,
+                        user_id: sessionStorage.getItem("session")
+                    }
+                    // save response to firebase
+                    saveResponse(data);
+                    // console.log("Response: ", data.response);
+                })
+            })
+
+            // Get a list of responses from your database
+            async function getResponses() {
+                try {
+                    const responseCol = await collection(db, 'responses');
+                    const responseSnapshot = await getDocs(responseCol);
+                    const responseList = responseSnapshot.docs.map(doc => doc.data());
+                    responses = responseList;
+
+                    responseList.map((doc, id) => {
+
+                        // console.log(doc);
+
+                        if (doc.user_id === sessionStorage.getItem("session")) {
+                            if (doc.question === "How did you get here?") {
+                                // 
+                                document.getElementById("how_response").innerHTML = doc.response;
+                                document.getElementById("how_response").disabled = true;
+                            } else if (doc.question === "Are you one of us?") {
+                                // 
+                                document.getElementById("who_response").innerHTML = doc.response;
+                                document.getElementById("who_response").disabled = true;
+                            } else if (doc.question === "What do you do?") {
+                                // 
+                                document.getElementById("what_response1").innerHTML = doc.response;
+                                document.getElementById("what_response1").disabled = true;
+                            } else if (doc.question === "How can we work together?") {
+                                // 
+                                document.getElementById("what_response2").innerHTML = doc.response;
+                                document.getElementById("what_response2").disabled = true;
+                            }
+                        }
+                    })
+                    // return cityList;
+                } catch (error) {
+                    alert(error.message);
+                }
+            }
+
+            //  call function
+            getResponses();
+
+            const closeModals = () => {
+                document.getElementById("modal1").style.display = "none";
+                document.getElementById("modal2").style.display = "none";
+                document.getElementById("modal3").style.display = "none";
+                document.getElementById("modal4").style.display = "none";
+            }
+
+            // Add a new response
+            async function saveResponse(data) {
+                try {
+                    let exists = false;
+                    responses.map((item, i) => {
+                        if (item.user_id === data.user_id && item.question === data.question) {
+                            exists = true;
+                        }
+                    })
+
+                    if (!exists) {
+                        const responseCol = await collection(db, 'responses');
+                        const docRef = await addDoc(responseCol, data);
+                        alert("Response submitted")
+
+                    } else {
+                        alert("Response already submitted!!!")
+
+                    }
+                } catch (error) {
+                    alert(error.message);
+                }
+                // location.reload();
+                closeModals();
+                getResponses(db);
+            }
+
+            // backup message to firestore
+            async function saveMessage(data) {
+                try {
+                    const messagesCol = await collection(db, 'messages');
+                    const docRef = await addDoc(messagesCol, data);
+                } catch (error) {
+                    let err = "Error saving backup message: " + error.message
+                    alert(err);
+                }
+            }
+
+            // ------------ captcha validation -------------
+            function Captcha() {
+                console.log("setting value");
+                var alpha = new Array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+                    'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
+                    '0', '1', '2', '3', '4', '5', '6', '7', '8', '9');
+                var i;
+                for (i = 0; i < 6; i++) {
+                    var a = alpha[Math.floor(Math.random() * alpha.length)];
+                    var b = alpha[Math.floor(Math.random() * alpha.length)];
+                    var c = alpha[Math.floor(Math.random() * alpha.length)];
+                    var d = alpha[Math.floor(Math.random() * alpha.length)];
+                    var e = alpha[Math.floor(Math.random() * alpha.length)];
+                    var f = alpha[Math.floor(Math.random() * alpha.length)];
+                    var g = alpha[Math.floor(Math.random() * alpha.length)];
+                }
+                var code = '' + a + b + c + d + e + f + g;
+                captchaValue = code
+            }
+            Captcha();
+
+            function ValidCaptcha(val) {
+                if (captchaValue == val) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+
+            function removeSpaces(string) {
+                return string.split(' ').join('');
+            }
+
+            // --------- email.js ----------------
+            emailjs.init('n-awkU4tZrbvCvz77')
+
+            const btn = document.getElementById('contact-button');
+
+            document.getElementById('contact-form')
+                .addEventListener('submit', function (event) {
+                    event.preventDefault();
+
+                    let capchaPromp = "Enter the following to confirm you are human: " + captchaValue
+                    let cap = prompt(capchaPromp)
+
+                    if (ValidCaptcha(cap)) {
+                        btn.value = 'Sending...';
+
+                        const serviceID = 'default_service';
+                        const templateID = 'template_zgvpoom';
+
+                        emailjs.sendForm(serviceID, templateID, this)
+                            .then(() => {
+                                let dt = {
+                                    from_name: document.getElementById('from_name').value,
+                                    from_email: document.getElementById('from_email').value,
+                                    subject: document.getElementById('subject').value,
+                                    message: document.getElementById('message').value
+                                }
+                                saveMessage(dt);
+                                btn.value = 'Send';
+                                alert('Message sent successfully');
+                                document.getElementById('contact-form').reset();
+                            }, (err) => {
+                                btn.value = 'Send';
+                                alert(JSON.stringify(err));
+                            });
+                    } else {
+                        alert("Incorrect captcha answer!!!");
+                        Captcha();
+                        btn.value = 'Send';
+                    }
+                });
+
+            // ########## TEAM ############
+            const teamMembers = [
+                {
+                    name: "Shamiso Banda",
+                    icon: "SB",
+                    designation: "Co-Founder & CEO",
+                    content: "Shamiso thought of starting this company because she is profoundly passionate about contributing to the creation of a better world for all. She went through a BSc in Environmental Sciences, a BSc Honours in Zoology, and an MSc in Zoology at Nelson Mandela University and then became a PhD candidate in Journalism, Media & Communications at Stellenbosch University, on the journey here. Through the years, she has become a researcher, a conservationist, and a communicator with the desire to bring a narrative of collective action to humanity’s attention. She believes we can achieve the SDGs by working together, and that we can do it faster than we might imagine. With that in mind, she gave Natasha a call, and a call to Anesu soon followed"
+                },
+                {
+                    name: "Natasha Shilubane",
+                    designation: "Co-Founder & Chief Communications Officer",
+                    content: "Justo donec enim diam vulputate ut pharetra sit amet. Pharetra massa massa ultricies mi quis hendrerit dolor. Accumsan sit amet nulla facilisi morbi. Duis at consectetur lorem donec massa sapien. Mi ipsum faucibus vitae aliquet nec ullamcorper sit amet risus. Nec dui nunc mattis enim ut tellus elementum sagittis. Imperdiet nulla malesuada pellentesque elit eget gravida cum sociis. Non diam phasellus vestibulum lorem sed risus ultricies. Sed sed risus pretium quam vulputate dignissim. Ut consequat semper viverra nam libero. Diam in arcu cursus euismod quis viverra nibh cras pulvinar. Eu sem integer vitae justo eget magna fermentum iaculis eu. Id velit ut tortor pretium viverra. Tincidunt eget nullam non nisi est.",
+                    icon: "NS"
+                },
+                {
+                    name: "Anesu Ketani",
+                    designation: "Technical / technological advisor",
+                    icon: "AK",
+                    content: "Anesu is a Software Engineer who is deeply passionate about the potential of technology. He leverages his background in Systems Engineering to develop user-friendly solutions that empower both individuals and businesses. Anesu firmly believes that technology has the power to bridge the digital divide, leading to sustained, inclusive and sustainable economic growth, full and productive employment and decent work for all – SDG 8."
+                },
+                {
+                    name: "Slaitso Emeldah Shilubane",
+                    designation: "Administrative Partner",
+                    content: "Suscipit adipiscing bibendum est ultricies. Et netus et malesuada fames ac. Pharetra convallis posuere morbi leo urna molestie at elementum eu. Accumsan sit amet nulla facilisi. Viverra accumsan in nisl nisi. Nisl nisi scelerisque eu ultrices vitae auctor eu augue. A diam sollicitudin tempor id eu nisl nunc. Scelerisque fermentum dui faucibus in ornare quam viverra orci. Aliquet bibendum enim facilisis gravida neque convallis. Tempor id eu nisl nunc mi ipsum faucibus vitae aliquet. Non blandit massa enim nec dui nunc mattis. Faucibus nisl tincidunt eget nullam non. Vel eros donec ac odio. Posuere ac ut consequat semper viverra. Cursus sit amet dictum sit.",
+                    icon: "SES"
+                },
+                {
+                    name: "Ntaoleng Lechela",
+                    designation: "PR & Media advisor",
+                    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                    icon: "NL"
+                },
+            ]
+
+            let teamsSection = document.getElementById("team");
+
+            let teamsDiv = document.createElement("div");
+            teamsDiv.classList.add("d-flex");
+            teamsDiv.classList.add("flex-wrap");
+            teamsDiv.classList.add("justify-content-evenly");
+            teamsDiv.classList.add("align-items-center");
+            teamsDiv.classList.add("team-members");
+            teamsSection.appendChild(teamsDiv);
+
+            teamMembers.map((member, id) => {
+                let memberDiv = document.createElement("div");
+                memberDiv.classList.add("member-div");
+
+                let icon = document.createElement("button");
+                icon.type = "button";
+                icon.innerHTML = member.icon;
+                icon.classList.add("icon");
+                icon.id = `button-member-${id}`;
+                memberDiv.appendChild(icon);
+
+                let descDiv = document.createElement("div");
+                descDiv.classList.add("team-member-desc")
+
+                let name = document.createElement("span");
+                name.innerHTML = member.name;
+                name.classList.add("name");
+                descDiv.appendChild(name);
+
+                let des = document.createElement("span");
+                des.innerHTML = member.designation;
+                des.classList.add("des");
+                descDiv.appendChild(des);
+
+                memberDiv.appendChild(descDiv);
+
+                // div
+                memberDiv.innerHTML += ` <div
+                        class="modal focus"
+                        role="dialog"
+                        aria-labelledby="exampleModalLabel"
+                        aria-hidden="true"
+                        id="member-${id}"
+                    >
+                        <form class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header d-flex align-items-center justify-content-end">
+                                    <button type="button"
+                                        class="close"
+                                        data-dismiss="modal"
+                                        aria-label="Close"
+                                        onClick="document.getElementById('member-${id}').style.display = 'none'"
+                                    >
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <span class="icon col-4">${member.icon}</span>
+                                        <span class="name col-6">${member.name} - (${member.designation})</span>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="form-outline">
+                                                <span>
+                                                ${member.content}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>`
+
+                // -------------
+
+                teamsDiv.appendChild(memberDiv);
+            })
+
+            let ids = [0, 1, 2, 3, 4];
+            ids.map((id, i) => {
+                document.getElementById(`button-member-${id}`).addEventListener("click", () => {
+                    document.getElementById(`member-${id}`).style.display = "block";
+                });
+            })
+
+        }
+    </script>
+
+</body>
+
+</html>
