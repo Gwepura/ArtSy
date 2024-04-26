@@ -18,4 +18,9 @@ urlpatterns = [
     path('responses/add/', views.add_response, name='add_response'),
     path('responses/edit/<int:id>', views.edit_response, name='edit_response'),
     path('responses/delete/<int:id>', views.delete_response, name='delete_response'),
+    path('team/', views.view_team, name='view_team'),
+    path('team/add/', views.add_team_member, name='add_team_member'),
+    path('team/<int:id>', views.view_team_member, name='view_team_member'),
+    path('team/edit/<int:id>', views.edit_team_member, name='edit_team_member'),
+    path('team/delete/<int:id>', views.delete_team_member, name='delete_team_member'),
 ]

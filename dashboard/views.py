@@ -187,3 +187,67 @@ def delete_response(request, id):
         response.delete()
 
     return HttpResponseRedirect(reverse('view_responses'))
+
+# Team Members
+def view_team(request):
+    return render(request, 'team/index.html', {
+        'team': TeamMember.objects.order_by('position')
+    })
+
+def view_team_member(request, id):
+    member = TeamMember.objects.get(id=id)
+
+    return HttpResponseRedirect(reverse('view_team'))
+def add_team_member(request):
+    if request.method == 'POST':
+        form = TeamMemberForm(request.POST)
+
+        if form.is_valid():
+            new_team_member = TeamMember(
+                name=form.cleaned_data['name'],
+                designation=form.cleaned_data['designation'],
+                bio=form.cleaned_data['bio'],
+                icon=form.cleaned_data['icon'],
+                position=form.cleaned_data['position'],
+                active=form.cleaned_data['active']
+            )
+
+            new_team_member.save()
+
+            return render(request, 'team/add.html', {
+                'form': TeamMemberForm(),
+                'success': True
+            })
+    else:
+        form = TeamMemberForm()
+
+    return render(request, 'team/add.html', {
+        'form': TeamMemberForm()
+    })
+
+def edit_team_member(request, id):
+    if request.method == 'POST':
+        member = TeamMember.objects.get(id=id)
+        form = TeamMemberForm(request.POST, instance=member)
+
+        if form.is_valid():
+            form.save()
+
+            return render(request, 'team/edit.html', {
+                'form': form,
+                'success': True,
+            })
+    else:
+        member = TeamMember.objects.get(id=id)
+        form = TeamMemberForm(instance=member)
+
+        return render(request, 'team/edit.html', {
+            'form': form
+        })
+
+def delete_team_member(request, id):
+    if request.method == 'POST':
+        member = TeamMember.objects.get(id=id)
+        member.delete()
+
+    return HttpResponseRedirect(reverse('view_team'))

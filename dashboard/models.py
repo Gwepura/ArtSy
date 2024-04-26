@@ -25,3 +25,28 @@ class Response(models.Model):
 
     def __str__(self):
         return self.response
+
+class TeamMember(models.Model):
+    name = models.CharField(max_length=100)
+    designation = models.CharField(max_length=100)
+    bio = models.TextField()
+    icon = models.CharField(max_length=5)
+    position = models.PositiveIntegerField()
+    active = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self) -> str:
+        return f'Member: {self.name} - {self.designation}'
+    
+class TeamMember(models.Model):
+    name = models.CharField(max_length=100)
+    designation = models.CharField(max_length=100)
+    bio = models.TextField()
+    icon = models.CharField(max_length=5)
+    position = models.PositiveIntegerField()
+    active = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self) -> str:
+        return f'Member: {self.name} - {self.designation}'
+    

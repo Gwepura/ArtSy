@@ -299,6 +299,53 @@
     <section data-panel="sixth" id="team" class="d-flex">
         <h2>OUR TEAM</h2>
 
+        <div class="d-flex flex-wrap justify-content-evenly align-items-center">
+            {% for member in team %}
+                <div class="member-div">
+                    <button type="button" class="icon" id="button-member-{{member.id}}" href="{% url 'view_member_profile' member.id %}" data-bs-toggle="modal" data-bs-target="#member-{{member.id}}">
+                        {{ member.icon }}
+                    </button>
+
+                    <span class="name">
+                        {{ member.name }}
+                    </span>
+
+                    <span class="des">
+                        {{ member.designation }}
+                    </span> 
+                    <div class="modal focus" id="member-{{member.id}}" tabindex="-1" aria-labelledby="memberModalLabel1" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-header d-flex align-items-center justify-content-end">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true"></span>
+                                </button>
+                            </div>
+                            <div class="modal-content">
+                                <div class="modal-content">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <span class="icon col-4">{{member.icon}}</span>
+                                        <span class="name col-6">{{member.name}} - {{member.designation}}</span>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="form-outline">
+                                                <span>
+                                                {{member.bio}}
+                                                <br>
+                                                <br>
+
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
     </section>
 
     <section data-panel="seventh" id="contact" class="d-flex flex-column">
@@ -696,93 +743,93 @@
                 },
             ]
 
-            let teamsSection = document.getElementById("team");
+            // let teamsSection = document.getElementById("team");
 
-            let teamsDiv = document.createElement("div");
-            teamsDiv.classList.add("d-flex");
-            teamsDiv.classList.add("flex-wrap");
-            teamsDiv.classList.add("justify-content-evenly");
-            teamsDiv.classList.add("align-items-center");
-            teamsDiv.classList.add("team-members");
-            teamsSection.appendChild(teamsDiv);
+            // let teamsDiv = document.createElement("div");
+            // teamsDiv.classList.add("d-flex");
+            // teamsDiv.classList.add("flex-wrap");
+            // teamsDiv.classList.add("justify-content-evenly");
+            // teamsDiv.classList.add("align-items-center");
+            // teamsDiv.classList.add("team-members");
+            // teamsSection.appendChild(teamsDiv);
 
-            teamMembers.map((member, id) => {
-                let memberDiv = document.createElement("div");
-                memberDiv.classList.add("member-div");
+            // teamMembers.map((member, id) => {
+            //     let memberDiv = document.createElement("div");
+            //     memberDiv.classList.add("member-div");
 
-                let icon = document.createElement("button");
-                icon.type = "button";
-                icon.innerHTML = member.icon;
-                icon.classList.add("icon");
-                icon.id = `button-member-${id}`;
-                memberDiv.appendChild(icon);
+            //     let icon = document.createElement("button");
+            //     icon.type = "button";
+            //     icon.innerHTML = member.icon;
+            //     icon.classList.add("icon");
+            //     icon.id = `button-member-${id}`;
+            //     memberDiv.appendChild(icon);
 
-                let descDiv = document.createElement("div");
-                descDiv.classList.add("team-member-desc")
+            //     let descDiv = document.createElement("div");
+            //     descDiv.classList.add("team-member-desc")
 
-                let name = document.createElement("span");
-                name.innerHTML = member.name;
-                name.classList.add("name");
-                descDiv.appendChild(name);
+            //     let name = document.createElement("span");
+            //     name.innerHTML = member.name;
+            //     name.classList.add("name");
+            //     descDiv.appendChild(name);
 
-                let des = document.createElement("span");
-                des.innerHTML = member.designation;
-                des.classList.add("des");
-                descDiv.appendChild(des);
+            //     let des = document.createElement("span");
+            //     des.innerHTML = member.designation;
+            //     des.classList.add("des");
+            //     descDiv.appendChild(des);
 
-                memberDiv.appendChild(descDiv);
+            //     memberDiv.appendChild(descDiv);
 
-                // div
-                memberDiv.innerHTML += ` <div
-                        class="modal focus"
-                        role="dialog"
-                        aria-labelledby="exampleModalLabel"
-                        aria-hidden="true"
-                        id="member-${id}"
-                    >
-                        <form class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header d-flex align-items-center justify-content-end">
-                                    <button type="button"
-                                        class="close"
-                                        data-dismiss="modal"
-                                        aria-label="Close"
-                                        onClick="document.getElementById('member-${id}').style.display = 'none'"
-                                    >
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        <span class="icon col-4">${member.icon}</span>
-                                        <span class="name col-6">${member.name} - (${member.designation})</span>
-                                    </div>
+            //     // div
+            //     memberDiv.innerHTML += ` <div
+            //             class="modal focus"
+            //             role="dialog"
+            //             aria-labelledby="exampleModalLabel"
+            //             aria-hidden="true"
+            //             id="member-${id}"
+            //         >
+            //             <form class="modal-dialog" role="document">
+            //                 <div class="modal-content">
+            //                     <div class="modal-header d-flex align-items-center justify-content-end">
+            //                         <button type="button"
+            //                             class="close"
+            //                             data-dismiss="modal"
+            //                             aria-label="Close"
+            //                             onClick="document.getElementById('member-${id}').style.display = 'none'"
+            //                         >
+            //                             <span aria-hidden="true">&times;</span>
+            //                         </button>
+            //                     </div>
+            //                     <div class="modal-body">
+            //                         <div class="d-flex align-items-center justify-content-between">
+            //                             <span class="icon col-4">${member.icon}</span>
+            //                             <span class="name col-6">${member.name} - (${member.designation})</span>
+            //                         </div>
                                     
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="form-outline">
-                                                <span>
-                                                ${member.content}
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>`
+            //                         <div class="row">
+            //                             <div class="col-12">
+            //                                 <div class="form-outline">
+            //                                     <span>
+            //                                     ${member.content}
+            //                                     </span>
+            //                                 </div>
+            //                             </div>
+            //                         </div>
+            //                     </div>
+            //                 </div>
+            //             </form>
+            //         </div>`
 
-                // -------------
+            //     // -------------
 
-                teamsDiv.appendChild(memberDiv);
-            })
+            //     teamsDiv.appendChild(memberDiv);
+            // })
 
-            let ids = [0, 1, 2, 3, 4];
-            ids.map((id, i) => {
-                document.getElementById(`button-member-${id}`).addEventListener("click", () => {
-                    document.getElementById(`member-${id}`).style.display = "block";
-                });
-            })
+            // let ids = [0, 1, 2, 3, 4];
+            // ids.map((id, i) => {
+            //     document.getElementById(`button-member-${id}`).addEventListener("click", () => {
+            //         document.getElementById(`member-${id}`).style.display = "block";
+            //     });
+            // })
 
         }
     </script>

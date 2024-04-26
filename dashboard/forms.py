@@ -19,7 +19,7 @@ class EmailForm(forms.ModelForm):
             'message': forms.Textarea(attrs={'class': 'form-control'}),
         }
 
-class QuestionForm(forms.Form):
+class QuestionForm(forms.ModelForm):
     class Meta:
         model = Question
         fields = ['question_text']
@@ -30,7 +30,7 @@ class QuestionForm(forms.Form):
             'question_text': forms.TextInput(attrs={'class': 'form-control'}),
         }
 
-class ResponseForm(forms.Form):
+class ResponseForm(forms.ModelForm):
     class Meta:
         model = Response
         fields = ['response']
@@ -39,4 +39,25 @@ class ResponseForm(forms.Form):
         }
         widgets = {
             'response': forms.TextInput(attrs={'class': 'form-control'}),
+        }
+
+class TeamMemberForm(forms.ModelForm):
+    class Meta:
+        model = TeamMember
+        fields = ['name', 'designation', 'bio', 'icon', 'position', 'active']
+        labels = {
+            'name': 'Name',
+            'designation': 'Designation',
+            'bio': 'Bio',
+            'icon': 'Icon',
+            'position': 'Position',
+            'active': 'Active',
+        }
+        widgets = {
+            'name': forms.TextInput(attrs={'class': 'form-control'}),
+            'designation': forms.TextInput(attrs={'class': 'form-control'}),
+            'bio': forms.Textarea(attrs={'class': 'form-control'}),
+            'icon': forms.TextInput(attrs={'class': 'form-control'}),
+            'position': forms.NumberInput(attrs={'class': 'form-control'}),
+            'active': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
         }
